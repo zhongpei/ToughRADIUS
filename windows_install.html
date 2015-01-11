@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ToughRADIUS在windows下的安装配置 &mdash; ToughRADIUS lastest documentation</title>
+    
+    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'lastest',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="ToughRADIUS lastest documentation" href="index.html" />
+    <link rel="prev" title="ToughRADIUS认证计费系统" href="index.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+<div class="header">
+  <div class="logo">
+    <a href="index.html">
+      <img class="logo" src="_static/logo.png" alt="Logo"/>
+    </a>
+  </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="ToughRADIUS认证计费系统"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ToughRADIUS lastest documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="toughradiuswindows">
+<h1>ToughRADIUS在windows下的安装配置<a class="headerlink" href="#toughradiuswindows" title="Permalink to this headline">¶</a></h1>
+<p>ToughRADIUS为windows提供了一个快速部署的模式，帮助使用者快速部署ToughRADIUS服务。</p>
+<div class="section" id="id1">
+<h2>最新版本下载<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>从以下链接可以下载最新的ToughRADIUS版本：</p>
+<p><a class="reference external" href="https://github.com/talkincode/ToughRADIUS/archive/master.zip">github.com mirror</a></p>
+<p><a class="reference external" href="https://coding.net/u/jamiesun/p/ToughRADIUS/git/archive/master">coding.net mirror</a></p>
+<p><a class="reference external" href="https://git.oschina.net/jamiesun/ToughRADIUS/repository/archive?ref=master">oschina.net mirror</a></p>
+</div>
+<div class="section" id="id2">
+<h2>数据库安装配置<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>ToughRADIUS主要采用MySQL(5.0以上版本)存储数据，在部署ToughRADIUS之前请自行安装MySQL（安装步骤请参考MySQL相关文档）,安装MySQL后确保MySQL为运行状态。</p>
+<ul class="simple">
+<li>修改配置文件 config.json,请修改数据库地址用户名密码等选项与实际相符。</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s2">&quot;mysql&quot;</span><span class="o">:</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;maxusage&quot;</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">&quot;passwd&quot;</span><span class="o">:</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;charset&quot;</span><span class="o">:</span> <span class="s2">&quot;utf8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;db&quot;</span><span class="o">:</span> <span class="s2">&quot;toughradius&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;host&quot;</span><span class="o">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;user&quot;</span><span class="o">:</span> <span class="s2">&quot;root&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>运行createdb.bat创建数据库表，ToughRADIUS采用脚本工具自动创建数据库，无需SQL脚本。</li>
+</ul>
+<p>在windows环境下，双击createdb.bat即可进行数据库创建过程。</p>
+<div class="highlight-bash"><div class="highlight"><pre>createdb.bat
+
+<span class="c">#按提示进行操作</span>
+
+Z:<span class="se">\g</span>ithub<span class="se">\T</span>oughRADIUS&gt;toughrad.exe createdb.py    <span class="o">||</span> pause
+
+starting create and init database...
+
+drop and create database ?<span class="o">[</span>n<span class="o">]</span>y
+
+init database ?<span class="o">[</span>n<span class="o">]</span>y
+
+init testdata ?<span class="o">[</span>n<span class="o">]</span>n
+</pre></div>
+</div>
+<div class="topic">
+<p class="topic-title first">注意</p>
+<p>运行脚本会尝试删除原有数据库并重建，如果非首次安装，建议备份数据，init testdata是创建测试数据选项，一般不需要。</p>
+</div>
+</div>
+<div class="section" id="radiusd">
+<h2>运行radiusd服务<a class="headerlink" href="#radiusd" title="Permalink to this headline">¶</a></h2>
+<p>radiusd提供提供了RADIUS核心认证计费授权服务，在windows环境下，双击radiusd.bat脚本即可运行。</p>
+<p>radiusd.bat内容</p>
+<div class="highlight-bash"><div class="highlight"><pre>toughrad.exe radiusd/server.py -c config.json  -dict radiusd/dict/dictionary <span class="o">||</span> pause
+</pre></div>
+</div>
+<p>你可以新建一个debug的脚本，加上 -d 或者 &#8211;debug 参数即可。</p>
+<div class="highlight-bash"><div class="highlight"><pre>toughrad.exe radiusd/server.py -c config.json  -dict radiusd/dict/dictionary -d <span class="o">||</span> pause
+</pre></div>
+</div>
+<p>你可以通过参数指定端口</p>
+<div class="highlight-bash"><div class="highlight"><pre>toughrad.exe radiusd/server.py -auth <span class="m">1812</span> -acct <span class="m">1813</span> -admin <span class="m">1815</span> -c config.json  -dict radiusd/dict/dictionary -d <span class="o">||</span> pause
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-bash"><div class="highlight"><pre>radiusd.bat
+
+Z:<span class="se">\g</span>ithub<span class="se">\T</span>oughRADIUS&gt;toughrad.exe radiusd/server.py -c config.json  -dict radiu
+sd/dict/dictionary    <span class="o">||</span> pause
+
+<span class="o">[</span><span class="s1">&#39;radiusd/server.py&#39;</span>, <span class="s1">&#39;-c&#39;</span>, <span class="s1">&#39;config.json&#39;</span>, <span class="s1">&#39;-dict&#39;</span>, <span class="s1">&#39;radiusd/dict/dictionary&#39;</span><span class="o">]</span>
+
+logging to file logs/radiusd.log
+</pre></div>
+</div>
+<p>默认情况下，日志会打印到logs/radiusd.log文件里，在debug模式下将会打印系统更详细的日志，并会在控制台实时输出。</p>
+</div>
+<div class="section" id="console">
+<h2>运行console服务<a class="headerlink" href="#console" title="Permalink to this headline">¶</a></h2>
+<p>console是Web管理控制台系统，在windows环境下，双击console.bat脚本即可运行。</p>
+<p>console.bat脚本内容</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>console <span class="o">&amp;&amp;</span> ..<span class="se">\t</span>oughrad.exe admin.py -c ../config.json <span class="o">||</span> pause
+</pre></div>
+</div>
+<p>你可以新建一个debug的脚本，加上 -d 或者 &#8211;debug 参数即可。也可以指定端口运行(默认的http端口是1816)。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>console <span class="o">&amp;&amp;</span> ..<span class="se">\t</span>oughrad.exe admin.py -http <span class="m">8080</span> -admin <span class="m">1815</span> -c ../config.json <span class="o">||</span> pause
+</pre></div>
+</div>
+<p>示例：</p>
+<div class="highlight-bash"><div class="highlight"><pre>console.bat
+
+Z:<span class="se">\g</span>ithub<span class="se">\T</span>oughRADIUS&gt;cd console   <span class="o">&amp;&amp;</span> ..<span class="se">\t</span>oughrad.exe admin.py -c ../config.json <span class="o">||</span> pause
+Z:<span class="se">\g</span>ithub<span class="se">\T</span>oughRADIUS<span class="se">\c</span>onsole
+Z:<span class="se">\g</span>ithub<span class="se">\T</span>oughRADIUS<span class="se">\c</span>onsole
+ToughRADIUS Console Server Starting up...
+Listening on http://0.0.0.0:1816/
+Hit Ctrl-C to quit.
+</pre></div>
+</div>
+<p>当启动web控制台服务后，就可以通过浏览器访问管理界面了，在浏览器地址栏输入：<a class="reference external" href="http://127.0.0.1:1816">http://127.0.0.1:1816</a></p>
+<div class="topic">
+<p class="topic-title first">注意</p>
+<p>admin端口是radiusd的管理监听端口，在console中会通过该端口调用一些管理服务，比如实时查询跟踪用户消息等。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ToughRADIUS在windows下的安装配置</a><ul>
+<li><a class="reference internal" href="#id1">最新版本下载</a></li>
+<li><a class="reference internal" href="#id2">数据库安装配置</a></li>
+<li><a class="reference internal" href="#radiusd">运行radiusd服务</a></li>
+<li><a class="reference internal" href="#console">运行console服务</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">ToughRADIUS认证计费系统</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="ToughRADIUS认证计费系统"
+             >previous</a> |</li>
+        <li><a href="index.html">ToughRADIUS lastest documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, jamiesun.net@gmail.com.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
