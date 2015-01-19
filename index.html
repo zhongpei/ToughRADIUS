@@ -1,161 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>ToughRADIUS认证计费系统 &mdash; ToughRADIUS lastest documentation</title>
-    
-    <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     'lastest',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="ToughRADIUS lastest documentation" href="#" />
-    <link rel="next" title="ToughRADIUS在windows下的安装配置" href="windows_install.html" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
-<![endif]-->
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Toughradius by talkincode</title>
   </head>
+
   <body>
-<div class="header">
-  <div class="logo">
-    <a href="#">
-      <img class="logo" src="_static/logo.png" alt="Logo"/>
-    </a>
-  </div>
-</div>
+    <header>
+      <div class="inner">
+        <h1>Toughradius</h1>
+        <h2>ToughRadius is a radius server</h2>
+        <a href="https://github.com/talkincode/ToughRADIUS" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="windows_install.html" title="ToughRADIUS在windows下的安装配置"
-             accesskey="N">next</a> |</li>
-        <li><a href="#">ToughRADIUS lastest documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="toughradius" class="anchor" href="#toughradius" aria-hidden="true"><span class="octicon octicon-link"></span></a>ToughRADIUS</h1>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
-            
-  <div class="section" id="toughradius">
-<h1>ToughRADIUS认证计费系统<a class="headerlink" href="#toughradius" title="Permalink to this headline">¶</a></h1>
 <p>ToughRADIUS是一个开源，免费，易用的Radius服务软件。</p>
-<p>ToughRADIUS支持标准RADIUS协议，提供完整的AAA实现。支持灵活的策略管理，支持各种主流接入设备并轻松扩展，完美对接RouterOS，丰富的计费策略支持。</p>
-<p>ToughRADIUS支持MySQL存储用户数据，并支持数据缓存，极大的提高了性能。</p>
+
+<p>ToughRADIUS支持标准RADIUS协议，提供完整的AAA实现。支持灵活的策略管理，支持各种主流接入设备并轻松扩展，完美对接RouterOS，支持包月，时长计费。</p>
+
+<p>ToughRADIUS支持MySQL存储用户数据，支持数据缓存，极大的提高了性能。</p>
+
 <p>ToughRADIUS支持Windows，Linux跨平台部署，部署使用简单。</p>
+
 <p>提供了RADIUS核心服务引擎与Web管理控制台两个子系统，核心服务引擎提供高性能的认证计费服务，Web管理控制台提供了界面友好，功能完善的管理功能。</p>
-<div class="section" id="aaa">
-<h2>关于AAA的概念<a class="headerlink" href="#aaa" title="Permalink to this headline">¶</a></h2>
+
+<p><a href="http:://www.toughradius.org">ToughRADIUS网站：http:://www.toughradius.org</a></p>
+
+<h2>
+<a id="关于aaa的概念" class="anchor" href="#%E5%85%B3%E4%BA%8Eaaa%E7%9A%84%E6%A6%82%E5%BF%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>关于AAA的概念</h2>
+
 <p>AAA是Authentication（认证）、Authorization（授权）和Accounting（计费）的简称。它提供对用户进行认证、授权和计费三种安全功能。具体如下：</p>
-<ul class="simple">
-<li><ol class="first arabic">
+
+<ol>
 <li>认证（Authentication）：认证用户是否可以获得访问权，确定哪些用户可以访问网络。</li>
-</ol>
-</li>
-<li><ol class="first arabic" start="2">
 <li>授权（Authorization）：授权用户可以使用哪些服务。</li>
-</ol>
-</li>
-<li><ol class="first arabic" start="3">
 <li>计费（Accounting）：记录用户使用网络资源的情况。</li>
 </ol>
-</li>
-</ul>
-</div>
-<div class="section" id="radius">
-<h2>RADIUS协议<a class="headerlink" href="#radius" title="Permalink to this headline">¶</a></h2>
+
+<h2>
+<a id="radius协议" class="anchor" href="#radius%E5%8D%8F%E8%AE%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>RADIUS协议</h2>
+
 <p>RADIUS（Remote Authentication Dial In User Service）协议是在IETF的RFC2865和2866中定义的。RADIUS 是基于 UDP 的一种客户机/服务器协议。RADIUS客户机是网络访问服务器，它通常是一个路由器、交换机或无线访问点。RADIUS是AAA的一种实现协议。</p>
-</div>
-</div>
-<div class="section" id="main-docs">
-<span id="id1"></span><h1>ToughRADIUS手册<a class="headerlink" href="#main-docs" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="windows_install.html">ToughRADIUS在windows下的安装配置</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="windows_install.html#id1">最新版本下载</a></li>
-<li class="toctree-l2"><a class="reference internal" href="windows_install.html#id2">数据库安装配置</a></li>
-<li class="toctree-l2"><a class="reference internal" href="windows_install.html#radiusd">运行radiusd服务</a></li>
-<li class="toctree-l2"><a class="reference internal" href="windows_install.html#console">运行console服务</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
+        </section>
 
+        <aside id="sidebar">
+          <a href="https://github.com/talkincode/ToughRADIUS/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/talkincode/ToughRADIUS/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
 
-          </div>
-        </div>
+          <p class="repo-owner"><a href="https://github.com/talkincode/ToughRADIUS"></a> is maintained by <a href="https://github.com/talkincode">talkincode</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
       </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">ToughRADIUS认证计费系统</a><ul>
-<li><a class="reference internal" href="#aaa">关于AAA的概念</a></li>
-<li><a class="reference internal" href="#radius">RADIUS协议</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#main-docs">ToughRADIUS手册</a></li>
-</ul>
+    </div>
 
-  <h4>Next topic</h4>
-  <p class="topless"><a href="windows_install.html"
-                        title="next chapter">ToughRADIUS在windows下的安装配置</a></p>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="windows_install.html" title="ToughRADIUS在windows下的安装配置"
-             >next</a> |</li>
-        <li><a href="#">ToughRADIUS lastest documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2015, jamiesun.net@gmail.com.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
-    </div>
+  
   </body>
 </html>
