@@ -3,35 +3,50 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>ToughRADIUS by talkincode</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
+    <a id="forkme_banner" href="https://github.com/talkincode/ToughRADIUS">View on GitHub</a>
+    <div class="shell">
 
-        <header>
-          <h1>ToughRADIUS</h1>
-          <h2>ToughRadius is a radius server</h2>
-        </header>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>ToughRADIUS</h1>
+            <h2>ToughRadius is a radius server</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/talkincode/ToughRADIUS/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/talkincode/ToughRADIUS/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/talkincode/ToughRADIUS" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/talkincode/ToughRADIUS/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/talkincode/ToughRADIUS/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-        <hr>
 
-        <section id="main_content">
-          <h1>
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
 <a id="toughradius" class="anchor" href="#toughradius" aria-hidden="true"><span class="octicon octicon-link"></span></a>ToughRADIUS</h1>
 
 <p>ToughRADIUS是一个开源，免费，易用的Radius服务软件。</p>
@@ -46,7 +61,7 @@
 
 <p><a href="http://www.toughradius.net">ToughRADIUS网站：http://www.toughradius.net</a></p>
 
-<p><a href="http://docs.toughradius.net/build/html/">文档地址:http://docs.toughradius.net/build/html/</a></p>
+<p><a href="http://docs.toughradius.net/build/html/">ToughRADIUS文档: http://docs.toughradius.net/build/html/</a></p>
 
 <h2>
 <a id="linux下使用脚本自动安装" class="anchor" href="#linux%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux下使用脚本自动安装</h2>
@@ -59,27 +74,68 @@
 
 <p>脚本路径</p>
 
-<pre><code>install/centos6-install.sh
-
-install/centos7-install.sh
+<pre><code>install/centos-install
 </code></pre>
 
 <h3>
 <a id="安装过程" class="anchor" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装过程</h3>
 
-<p>自动化安装过程在终端下执行,以CentOS 7为例：</p>
+<p>自动化安装过程在终端下执行,以CentOS为例：</p>
 
-<p>下载脚本:</p>
+<p>下载脚本::</p>
 
-<pre><code>$ curl https://raw.githubusercontent.com/talkincode/ToughRADIUS/master/install/centos7-install.sh &gt; centos7-install.sh
+<pre><code>$ curl https://raw.githubusercontent.com/talkincode/ToughRADIUS/master/install/centos-install &gt; centos-install
+
+$ chmod +x centos-install
 </code></pre>
 
-<p>执行安装:</p>
+<p>执行安装::</p>
 
-<pre><code>$ sh centos7-install.sh all
+<pre><code>$ ./centos-install
 </code></pre>
 
-<p>执行完成以上两步可完成所有安装并运行ToughRADIUS服务，然后就可以使用了。</p>
+<p>在安装过程中会需要用户进行一些交互，如配置选项设置，是否安装本地mysql数据库。</p>
+
+<p>执行完成以上两步可完成所有安装，然后就可以使用了。</p>
+
+<h4>
+<a id="分步安装" class="anchor" href="#%E5%88%86%E6%AD%A5%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>分步安装</h4>
+
+<p>同时该脚本也提供了分步骤安装的支持。</p>
+
+<p>安装系统必要的依赖库请执行::</p>
+
+<pre><code>$ ./centos-install depend
+</code></pre>
+
+<p>安装ToughRADIUS请执行::</p>
+
+<pre><code>$ ./centos-install radius
+</code></pre>
+
+<p>安装mysql(可选)请执行::</p>
+
+<pre><code>$ ./centos-install mysql
+</code></pre>
+
+<p>定义ToughRADIUS配置执行::</p>
+
+<pre><code># 如果你选择不在本机安装mysql数据库，应该注意配置你的远程数据库参数
+
+$ ./centos-install config
+</code></pre>
+
+<p>创建ToughRADIUS数据库请执行::</p>
+
+<pre><code>$ ./centos-install initdb
+</code></pre>
+
+<p>完成以上所有后快速启动ToughRADIUS::</p>
+
+<pre><code># 在start之前请确认你的配置无误
+
+$ ./centos-install start 
+</code></pre>
 
 <h3>
 <a id="进程管理" class="anchor" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>进程管理</h3>
@@ -114,6 +170,31 @@ install/centos7-install.sh
 <p>停止mysql数据库进程::</p>
 
 <pre><code>$ toughrad stopdb
+</code></pre>
+
+<p>备份ToughRADIUS主数据库,备份路径在/var/toughradius/databak,若要上传至ftp，请配置/var/toughradius/radiusd.json文件中的备份选项::</p>
+
+<pre><code>$ toughrad backupdb
+</code></pre>
+
+<p>跟踪数据库日志::</p>
+
+<pre><code>$ toughrad tracedb
+</code></pre>
+
+<p>跟踪radius日志::</p>
+
+<pre><code>$ toughrad tracerad
+</code></pre>
+
+<p>跟踪管理控制台日志::</p>
+
+<pre><code>$ toughrad traceadmin
+</code></pre>
+
+<p>跟踪自助服务控制台日志::</p>
+
+<pre><code>$ toughrad tracecustomer    
 </code></pre>
 
 <h2>
@@ -152,15 +233,22 @@ $ docker run -d -v /var/toughradius:/var/toughradius \
 <p>自助服务系统运行于一个独立的进程。</p>
 
 <p>默认地址与端口:http://serverip:1817</p>
-        </section>
+      </section>
 
-        <footer>
-          ToughRADIUS is maintained by <a href="https://github.com/talkincode">talkincode</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/talkincode">talkincode</a> can be found on <a href="https://github.com/talkincode/ToughRADIUS">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
 
-        
-      </div>
     </div>
+
+    
   </body>
 </html>
