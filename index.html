@@ -1,140 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
     <title>ToughRADIUS by talkincode</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-    <a id="forkme_banner" href="https://github.com/talkincode/ToughRADIUS">View on GitHub</a>
-    <div class="shell">
-
+    <div class="wrapper">
       <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>ToughRADIUS</h1>
-            <h2>ToughRadius is a radius server</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
+        <h1>ToughRADIUS</h1>
+        <p>ToughRadius is a radius server</p>
+        <p class="view"><a href="https://github.com/talkincode/ToughRADIUS">View the Project on GitHub <small>talkincode/ToughRADIUS</small></a></p>
+        <ul>
+          <li><a href="https://github.com/talkincode/ToughRADIUS/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/talkincode/ToughRADIUS/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/talkincode/ToughRADIUS">View On <strong>GitHub</strong></a></li>
+        </ul>
       </header>
-
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/talkincode/ToughRADIUS/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/talkincode/ToughRADIUS/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
+      <section>
         <h1>
-<a id="toughradius" class="anchor" href="#toughradius" aria-hidden="true"><span class="octicon octicon-link"></span></a>ToughRADIUS</h1>
+<a id="toughradius--" class="anchor" href="#toughradius--" aria-hidden="true"><span class="octicon octicon-link"></span></a>ToughRADIUS  <a href="https://travis-ci.org/talkincode/ToughRADIUS"><img src="https://travis-ci.org/talkincode/ToughRADIUS.svg?branch=master" alt="Build Status"></a>
+</h1>
 
-<p>ToughRADIUS是一个开源，免费，易用的Radius服务软件。</p>
+<p>ToughRADIUS是一个开源的Radius服务软件，基于BSD许可协议发布。</p>
 
-<p>ToughRADIUS支持标准RADIUS协议，提供完整的AAA实现。支持灵活的策略管理，支持各种主流接入设备并轻松扩展，完美对接RouterOS，支持包月，时长计费。</p>
+<p>ToughRADIUS支持标准RADIUS协议，提供完整的AAA实现。支持灵活的策略管理，支持各种主流接入设备并轻松扩展，具备丰富的计费策略支持。</p>
 
-<p>ToughRADIUS支持MySQL存储用户数据，支持数据缓存，极大的提高了性能。</p>
+<p>ToughRADIUS支持使用Oracle, MySQL, PostgreSQL, MSSQL等主流数据库存储用户数据，并支持数据缓存，极大的提高了性能。
+ToughRADIUS支持Windows，Linux，BSD跨平台部署，部署使用简单。</p>
 
-<p>ToughRADIUS支持Windows，Linux跨平台部署，部署使用简单。</p>
-
-<p>提供了RADIUS核心服务引擎与Web管理控制台,用户自助服务三个子系统，核心服务引擎提供高性能的认证计费服务，Web管理控制台提供了界面友好，功能完善的管理功能。用户自助服务系统提供了一个面向终端用户的网上服务渠道。</p>
+<p>ToughRADIUS提供了RADIUS核心服务引擎与Web管理控制台,用户自助服务三个子系统，核心服务引擎提供高性能的认证计费服务，Web管理控制台提供了界面友好，功能完善的管理功能。用户自助服务系统提供了一个面向终端用户的网上服务渠道。</p>
 
 <p><a href="http://www.toughradius.net">ToughRADIUS网站：http://www.toughradius.net</a></p>
 
 <p><a href="http://docs.toughradius.net/build/html/">ToughRADIUS文档: http://docs.toughradius.net/build/html/</a></p>
 
 <h2>
-<a id="linux下使用脚本自动安装" class="anchor" href="#linux%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux下使用脚本自动安装</h2>
+<a id="linux下使用脚本在线安装" class="anchor" href="#linux%E4%B8%8B%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux下使用脚本在线安装</h2>
 
-<p>目前在Linux环境下，ToughRADIUS提供了自动化安装脚本，可以轻松的帮你完成安装过程。</p>
-
-<p>已支持自动化安装的linux系统</p>
-
-<p>CentOS 6 , CentOS 7</p>
-
-<p>脚本路径</p>
-
-<pre><code>install/centos-install
-</code></pre>
-
-<h3>
-<a id="安装过程" class="anchor" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装过程</h3>
-
-<p>自动化安装过程在终端下执行,以CentOS为例：</p>
+<p>请保证你的Linux服务器处于联网状态</p>
 
 <p>下载脚本::</p>
 
-<pre><code>$ curl https://raw.githubusercontent.com/talkincode/ToughRADIUS/master/install/centos-install &gt; centos-install
+<pre><code>$ curl https://raw.githubusercontent.com/talkincode/ToughRADIUS/master/bin/installer &gt; installer
 
-$ chmod +x centos-install
+$ chmod +x installer
 </code></pre>
 
-<p>执行安装::</p>
+<p>执行安装脚本，根据终端提示进行交互::</p>
 
-<pre><code>$ ./centos-install
+<pre><code>$ ./installer
 </code></pre>
 
-<p>在安装过程中会需要用户进行一些交互，如配置选项设置，是否安装本地mysql数据库。</p>
+<p>选择你的操作系统类型,默认为centos,注意不同的OS类型的流程提示不一样::</p>
 
-<p>执行完成以上两步可完成所有安装，然后就可以使用了。</p>
-
-<h4>
-<a id="分步安装" class="anchor" href="#%E5%88%86%E6%AD%A5%E5%AE%89%E8%A3%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>分步安装</h4>
-
-<p>同时该脚本也提供了分步骤安装的支持。</p>
-
-<p>安装系统必要的依赖库请执行::</p>
-
-<pre><code>$ ./centos-install depend
+<pre><code>[INPUT] - select your os type : 1:centos,2:ubuntu,3:freebsd [1]1
+[INFO] - &gt;&gt; Installation Information
+[INFO] - &gt;&gt; installdir: /usr/local/toughradius
+[INFO] - &gt;&gt; rundir: /var/toughradius
+[INFO] - &gt;&gt; log_dir: /var/toughradius/log
+[INFO] - &gt;&gt; mysql_rundir: /var/toughradius/mysql
+[INFO] - &gt;&gt; my_cnf_path: /var/toughradius/mysql/my.cnf
+[INFO] - &gt;&gt; start install centos depend
+[INFO] - &gt;&gt; run command : yum update -y
+[SUCC] - &gt;&gt; run command : yum update -y success!
+[INFO] - &gt;&gt; run command : yum install -y wget git gcc tcpdump crontabs
+[SUCC] - &gt;&gt; run command : yum install -y wget git gcc tcpdump crontabs success!
+[INFO] - &gt;&gt; run command : yum install -y mariadb-devel mysql-devel
+[SUCC] - &gt;&gt; run command : yum install -y mariadb-devel mysql-devel success!
+[INFO] - &gt;&gt; run command : yum install -y python-devel python-setuptools MySQL-python
+[SUCC] - &gt;&gt; run command : yum install -y python-devel python-setuptools MySQL-python success!
+[INFO] - &gt;&gt; run command : easy_install pip
+[SUCC] - &gt;&gt; run command : easy_install pip success!
+[INFO] - &gt;&gt; run command : pip install supervisor
+[SUCC] - &gt;&gt; run command : pip install supervisor success!
+[INFO] - &gt;&gt; run command : pip install argparse
+[SUCC] - &gt;&gt; run command : pip install argparse success!
+[INFO] - &gt;&gt; run command : pip install pycrypto&gt;=2.6.1
+[SUCC] - &gt;&gt; run command : pip install pycrypto&gt;=2.6.1 success!
+[INFO] - &gt;&gt; run command : pip install zope.interface&gt;=4.1.1
+[SUCC] - &gt;&gt; run command : pip install zope.interface&gt;=4.1.1 success!
+[INFO] - &gt;&gt; run command : pip install Twisted&gt;=14.0.2
+[SUCC] - &gt;&gt; run command : pip install Twisted&gt;=14.0.2 success!
+[INFO] - &gt;&gt; run command : pip install autobahn&gt;=0.9.3-3
+[SUCC] - &gt;&gt; run command : pip install autobahn&gt;=0.9.3-3 success!
+[INFO] - &gt;&gt; run command : pip install SQLAlchemy&gt;=0.9.8
+[SUCC] - &gt;&gt; run command : pip install SQLAlchemy&gt;=0.9.8 success!
+[INFO] - &gt;&gt; run command : pip install DBUtils&gt;=1.1
+[SUCC] - &gt;&gt; run command : pip install DBUtils&gt;=1.1 success!
+[INFO] - &gt;&gt; run command : pip install Mako&gt;=0.9.0
+[SUCC] - &gt;&gt; run command : pip install Mako&gt;=0.9.0 success!
+[INFO] - &gt;&gt; run command : pip install Beaker&gt;=1.6.4
+[SUCC] - &gt;&gt; run command : pip install Beaker&gt;=1.6.4 success!
+[INFO] - &gt;&gt; run command : pip install MarkupSafe&gt;=0.18
+[SUCC] - &gt;&gt; run command : pip install MarkupSafe&gt;=0.18 success!
+[INFO] - &gt;&gt; run command : pip install PyYAML&gt;=3.10
+[SUCC] - &gt;&gt; run command : pip install PyYAML&gt;=3.10 success!
+[INFO] - &gt;&gt; run command : pip install bottle&gt;=0.12.7
+[SUCC] - &gt;&gt; run command : pip install bottle&gt;=0.12.7 success!
+[INFO] - &gt;&gt; run command : pip install tablib&gt;=0.10.0
+[SUCC] - &gt;&gt; run command : pip install tablib&gt;=0.10.0 success!
+[INFO] - &gt;&gt; run command : pip install nose
+[SUCC] - &gt;&gt; run command : pip install nose success!
+[INFO] - &gt;&gt; run command : pip install sh&gt;=1.11
+[SUCC] - &gt;&gt; run command : pip install sh&gt;=1.11 success!
 </code></pre>
 
-<p>安装ToughRADIUS请执行::</p>
+<p>选择是否安装mysql，如果你的系统已经安装mysql，或者使用外部mysql数据库，请选择不安装::</p>
 
-<pre><code>$ ./centos-install radius
+<pre><code>[INFO] - start install mysql database server
+[INPUT] - install mysql, continue [y/n][n]y
+[INFO] - install mysql
+[INFO] - init mysql config
+[INFO] - write /var/toughradius/mysql/my.cnf
+[INFO] - &gt;&gt; run command : yum install -y mariadb mariadb-server mariadb-devel
+[SUCC] - &gt;&gt; run command : yum install -y mariadb mariadb-server mariadb-devel success!
+[INFO] - starting init mysql database
+[INFO] - &gt;&gt; run command : chown -R mysql:mysql /var/toughradius/mysql
+[SUCC] - &gt;&gt; run command : chown -R mysql:mysql /var/toughradius/mysql success!
+[INFO] - &gt;&gt; run command : mysql_install_db --defaults-file=/var/toughradius/mysql/my.cnf --user=mysql --datadir=/var/toughradius/mysql
+[SUCC] - &gt;&gt; run command : mysql_install_db --defaults-file=/var/toughradius/mysql/my.cnf --user=mysql --datadir=/var/toughradius/mysql  success!
+[INFO] - &gt;&gt; run command : mysqld_safe --defaults-file=/var/toughradius/mysql/my.cnf --user=mysql &amp;
+150220 05:33:21 mysqld_safe Logging to '/var/toughradius/log/mysqld.log'.
+150220 05:33:21 mysqld_safe Starting mysqld daemon with databases from /var/toughradius/mysql
+[INFO] - &gt;&gt; run command : echo '30 1 * * * $(which toughctl) -backupdb -c /var/toughradius/radiusd.conf &gt; /dev/null' &gt; /tmp/backup.cron
+[SUCC] - &gt;&gt; run command : echo '30 1 * * * $(which toughctl) -backupdb -c /var/toughradius/radiusd.conf &gt; /dev/null' &gt; /tmp/backup.cron success!
+[INFO] - &gt;&gt; run command : crontab /tmp/backup.cron
+[SUCC] - &gt;&gt; run command : crontab /tmp/backup.cron success!
 </code></pre>
 
-<p>安装mysql(可选)请执行::</p>
+<p>选择是否创建mysql管理用户，如果不需要，直接跳过::</p>
 
-<pre><code>$ ./centos-install mysql
+<pre><code>[INFO] - set mysql manage user
+[INPUT] - create a mysql admin user? y/n [n]y
+[INPUT] - set mysql manage username, not root [admin]:
+[INPUT] - set mysql manage passwd, [radius]:
+[INFO] - &gt;&gt; run command : echo "GRANT ALL ON *.* TO admin@'%' IDENTIFIED BY 'radius' WITH GRANT OPTION;FLUSH PRIVILEGES" | mysql --defaults-file=/var/toughradius/mysql/my.cnf
+[SUCC] - &gt;&gt; run command : echo "GRANT ALL ON *.* TO admin@'%' IDENTIFIED BY 'radius' WITH GRANT OPTION;FLUSH PRIVILEGES" | mysql --defaults-file=/var/toughradius/mysql/my.cnf success!
+[INFO] - show database
+[INFO] - &gt;&gt; run command : echo "show databases;" | mysql --defaults-file=/var/toughradius/mysql/my.cnf
+Database
+information_schema
+mysql
+performance_schema
+test
+[INFO] - &gt;&gt; install centos depend done
 </code></pre>
 
-<p>定义ToughRADIUS配置执行::</p>
+<p>安装ToughRADIUS包，根据你的网络情况，选择软件源镜像::</p>
 
-<pre><code># 如果你选择不在本机安装mysql数据库，应该注意配置你的远程数据库参数
-
-$ ./centos-install config
+<pre><code>[INFO] - start fetch ToughRADIUS from git repository
+[INPUT] - select ToughRADIUS mirror [ 1:github 2:oschina 3:coding 4:csdn ][1]:
+[INFO] - &gt;&gt; run command : git clone https://github.com/talkincode/ToughRADIUS.git /usr/local/toughradius
+[SUCC] - &gt;&gt; run command : git clone https://github.com/talkincode/ToughRADIUS.git /usr/local/toughradius success!
+[INFO] - &gt;&gt; run command : pip install -e /usr/local/toughradius
+[SUCC] - &gt;&gt; run command : pip install -e /usr/local/toughradius success!
+[INFO] - &gt;&gt; run command : ln -s $(which toughrad) /etc/init.d/toughrad
+[SUCC] - &gt;&gt; run command : ln -s $(which toughrad) /etc/init.d/toughrad success!
+[INFO] - &gt;&gt; run command : chmod +x /etc/init.d/toughrad
+[SUCC] - &gt;&gt; run command : chmod +x /etc/init.d/toughrad success!
+[INFO] - &gt;&gt; run command : chkconfig --add toughrad
+[SUCC] - &gt;&gt; run command : chkconfig --add toughrad success!
+[INFO] - &gt;&gt; run command : chkconfig toughrad on
+[SUCC] - &gt;&gt; run command : chkconfig toughrad on success!
+[INFO] - &gt;&gt; run command : chmod 754 /usr/lib/systemd/system/toughrad.service
+[SUCC] - &gt;&gt; run command : chmod 754 /usr/lib/systemd/system/toughrad.service success!
 </code></pre>
 
-<p>创建ToughRADIUS数据库请执行::</p>
+<p>配置文件生成，根据你的实际环境进行配置::</p>
 
-<pre><code>$ ./centos-install initdb
+<pre><code>[INFO] - set config...
+[INFO] - set default option
+[INPUT] - set debug [0/1] [0]:
+[INPUT] - time zone [ CST-8 ]:
+[INFO] - set database option
+[INPUT] - database type [mysql]:
+[INPUT] - database host [127.0.0.1]:
+[INPUT] - database port [3306]:
+[INPUT] - database dbname [toughradius]:
+[INPUT] - database user [root]:
+[INPUT] - database passwd []:
+[INPUT] - db pool maxusage [30]:
+[INFO] - set mysql backup ftpserver option
+[INPUT] - backup ftphost [127.0.0.1]:
+[INPUT] - backup ftpport [21]:
+[INPUT] - backup ftpuser [ftpuser]:
+[INPUT] - backup ftppwd [ftppwd]:
+[INFO] - set radiusd option
+[INPUT] - radiusd authport [1812]:
+[INPUT] - radiusd acctport [1813]:
+[INPUT] - radiusd adminport [1815]:
+[INPUT] - radiusd cache_timeout (second) [600]:
+[INFO] - set admin option
+[INPUT] - admin http port [1816]:
+[INFO] - set customer option
+[INPUT] - customer http port [1817]:
+[SUCC] - config done
 </code></pre>
 
-<p>完成以上所有后快速启动ToughRADIUS::</p>
+<p>初始化数据库并启动服务::</p>
 
-<pre><code># 在start之前请确认你的配置无误
+<pre><code>starting create and init database...
+drop database toughradius
+create database toughradius DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
+commit
+[SUCC] - init db success
+[INFO] - start server...
+[INFO] - &gt;&gt; run command : toughrad start
+[SUCC] - &gt;&gt; run command : toughrad start success!
 
-$ ./centos-install start 
+# RUNNING 表示服务已经成功启动
+[INFO] - &gt;&gt; run command : toughrad status
+rad_console                      RUNNING   pid 2148, uptime 0:00:06
+rad_customer                     RUNNING   pid 2147, uptime 0:00:06
+radiusd                          RUNNING   pid 2153, uptime 0:00:05
+[INFO] - done
 </code></pre>
 
 <h3>
@@ -234,21 +323,12 @@ $ docker run -d -v /var/toughradius:/var/toughradius \
 
 <p>默认地址与端口:http://serverip:1817</p>
       </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/talkincode">talkincode</a> can be found on <a href="https://github.com/talkincode/ToughRADIUS">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
     </div>
-
+    <footer>
+      <p>Project maintained by <a href="https://github.com/talkincode">talkincode</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
