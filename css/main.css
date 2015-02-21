@@ -97,6 +97,13 @@ footer .about a{
   text-align: left;
 
 }
+.jumbotron .qrtext{
+    margin-top:18px;
+    font-size: 16px;
+    line-height: 200%;
+    text-align: left;
+    padding-left:21px;
+}
 .jumbotron h3{
     font-size: 1.3em;
     font-weight: 700;
@@ -111,12 +118,7 @@ footer .about a{
 }
 
 
-.jumbotron .tr{
-  color: #3275c1;
-  font-style: italic;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
+
 
 .jumbotron .ctext{
   color: #3275c1;
