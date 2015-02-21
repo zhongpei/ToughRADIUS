@@ -80,21 +80,36 @@ footer .about a{
 }
 
 .jumbotron {
-  /*background-image: url(../img/bg.jpg);*/
+  background-color:white;
   min-height: 512px;
   margin-top: 40px;
   margin-bottom: 0px;
+  padding-left:60px;
+  padding-right:60px;  
 }
 .jumbotron h1{
-   font-size: 3.7em;
-   font-weight: 700;
-   text-align: center;
+   font-size: 1.7em;
+   font-weight: 600;
 }
 .jumbotron p{
-  font-size: 29px;
+  font-size: 16px;
   line-height: 200%;
-  text-align: center;;
+  text-align: left;
+
 }
+.jumbotron h3{
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.jumbotron ul {
+    margin-left:20px;
+    padding-left:0px;
+}
+.jumbotron ul li{
+    font-size: 14px;
+    line-height: 200%;
+}
+
 
 .jumbotron .tr{
   color: #3275c1;
