@@ -59,8 +59,18 @@
 <div class="container">
 <p><img src="img/toughradius.png" title="toughradius.net"></p>
 <hr>
-<p><a  href="https://github.com/talkincode/ToughRADIUS/releases/tag/v0.9.5" >0.9.5(latest)</a></p>
-
+<p><a  href="https://github.com/talkincode/ToughRADIUS/releases/tag/v0.9.6" >0.9.6(latest)</a></p>
+<h3>V0.9.6 版本说明：</h3>
+<ul>
+  <li>提供了对sqlite嵌入式数据库支持,使用sqlite数据库无需安装任何数据库软件。</li>
+  <li>支持以独立进程运行所有服务，提供standalone模式。</li>    <li>数据库配置部分变化，采用dburl格式，考虑到后期支持mssql，pgsql等，提供灵活性。使用sqlite数据库时建议使用standalone模式运行，因为sqlite对多进程支持不是很好。</li>
+  <li>数据库在线用户表新增两个字段，可以直接重建此表。</li>
+  <li>新增对在线用户的过期检查，自动删除过期在线用户。</li>
+  <li>初始化数据库请用toughctl --initdb,无其他参数，无交互提示，如果有数据，请记得备份，sqlite数据只需要拷贝文件即可。</li>
+  <li>资费新增时，单位改为Mbps。</li>
+  <li>支持smtp免认证模式，密码填写no或none即可。</li>
+  <li>触发通知的url格式bug修复。</li>
+</ul>
 <h3>V0.9.5 版本说明：</h3>
 <ul>
   <li>修复买断时长与买断流量资费续费的BUG。</li>
