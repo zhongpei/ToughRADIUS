@@ -64,7 +64,7 @@
 <ul>
   <li>提供了对sqlite嵌入式数据库支持,使用sqlite数据库无需安装任何数据库软件。</li>
   <li>支持以独立进程运行所有服务，提供standalone模式。</li>    <li>数据库配置部分变化，采用dburl格式，考虑到后期支持mssql，pgsql等，提供灵活性。使用sqlite数据库时建议使用standalone模式运行，因为sqlite对多进程支持不是很好。</li>
-  <li>数据库在线用户表新增两个字段，可以直接重建此表。</li>
+  <li>数据库计费信息表（slc_rad_billing）新增两个字段，需要更新此表，请参考版本附件sql。</li>
   <li>新增对在线用户的过期检查，自动删除过期在线用户。</li>
   <li>初始化数据库请用toughctl --initdb,无其他参数，无交互提示，如果有数据，请记得备份，sqlite数据只需要拷贝文件即可。</li>
   <li>资费新增时，单位改为Mbps。</li>
