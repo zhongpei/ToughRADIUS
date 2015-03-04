@@ -59,7 +59,18 @@
 <div class="container">
 <p><img src="img/toughradius.png" title="toughradius.net"></p>
 <hr>
-<p><a  href="https://github.com/talkincode/ToughRADIUS/releases/tag/v0.9.6" >0.9.6(latest)</a></p>
+<p><a  href="https://github.com/talkincode/ToughRADIUS/releases/tag/v0.9.7" class="btn btn-success">0.9.7(latest)</a></p>
+<h3>V0.9.7 版本说明：</h3>
+<ul>
+    <li>支持向NAS设备下发记账间隔，新增了默认参数。</li>
+    <li>支持爱快设备，支持下发限速，新增了默认参数。</li>
+    <li>toughctl工具新增了执行sql的功能，可以用来做升级数据库使用。</li>
+    <li>简化了安装配置流程，提供了一个最小可用使用Sqlite存储数据的版本,建议使用standalon模式。</li>
+    <li>去掉了了默认需要安装的mysql，openssl的依赖，当需要时另行安装，不影响最小可用版的正常使用。</li>
+    <li>去掉了数据库ftp备份功能，以后会提供更好的数据库备份方案。</li>
+    <li>支持到期用户下发特定时长的配置，配合到期下发地址池使用，当下发时长为0时，会发送认证拒绝消息。</li>
+    <li>管理界面首页控制台新增了对最近15分钟的消息负载统计。</li>
+</ul>
 <h3>V0.9.6 版本说明：</h3>
 <ul>
   <li>提供了对sqlite嵌入式数据库支持,使用sqlite数据库无需安装任何数据库软件。</li>
