@@ -110,6 +110,10 @@ body {
   color: #3275c1;
 }
 
+.service-intro{
+    line-height:200%;
+}
+
 #footer{
     height: 270px;
     background-color: #f5f5f5;
