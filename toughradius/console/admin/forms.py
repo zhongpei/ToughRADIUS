@@ -27,10 +27,11 @@ param_form = pyforms.Form(
     pyforms.Textbox("is_debug", description=u"DEBUG模式(0|1)",**input_style),
     pyforms.Textbox("radiusd_address", description=u"Radius服务IP地址",**input_style),
     pyforms.Textbox("radiusd_admin_port",rules.is_number, description=u"Radius服务管理端口",**input_style),
+    pyforms.Textbox("radiusd_bypass", description=u"Radius认证模式(0:免认证|1:认证)",**input_style),
     pyforms.Textbox("acct_interim_intelval",rules.is_number, description=u"Radius记账间隔(秒)",**input_style),
-    pyforms.Textbox("max_session_timeout",rules.is_number, description=u"Radius最大会话时长(秒)", **input_style),
+    # pyforms.Textbox("max_session_timeout",rules.is_number, description=u"Radius最大会话时长(秒)", **input_style),
     pyforms.Textbox("reject_delay",rules.is_number, description=u"拒绝延迟时间(秒)(0-9)",**input_style),
-    pyforms.Textbox("portal_secret", description=u"portal登陆密钥", **input_style),
+    # pyforms.Textbox("portal_secret", description=u"portal登陆密钥", **input_style),
     pyforms.Button("submit", type="submit", html=u"<b>更新</b>", **button_style),
     title=u"参数配置管理",
     action="/param/update"
@@ -66,14 +67,15 @@ node_update_form = pyforms.Form(
 timetype = {0:u"标准时区,北京时间",1:u"时区和时间同区"}
 bastype = {
             '0' : u'标准',
-            '9' : u'思科',
-            '3041' : u'阿尔卡特',
-            '2352' : u'爱立信',
-            '2011' : u'华为',
-            '25506' : u'H3C',
-            '3902' : u'中兴',
-            '10055' : u'爱快',
-            '14988' : u'RouterOS'
+            '19797' : u'panabit',
+            # '9' : u'思科',
+            # '3041' : u'阿尔卡特',
+            # '2352' : u'爱立信',
+            # '2011' : u'华为',
+            # '25506' : u'H3C',
+            # '3902' : u'中兴',
+            # '10055' : u'爱快',
+            # '14988' : u'RouterOS'
         }
 
 bas_add_form = pyforms.Form(

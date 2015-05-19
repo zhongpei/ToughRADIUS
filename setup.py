@@ -43,7 +43,6 @@ setup(name='toughradius',
       url='https://github.com/talkincode/ToughRADIUS',
       license='GPL',
       description='RADIUS Server',
-      long_description=open('README.rst').read(),
       classifiers=[
        'Development Status :: 6 - Mature',
        'Intended Audience :: Developers',

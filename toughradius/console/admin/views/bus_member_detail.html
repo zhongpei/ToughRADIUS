@@ -244,11 +244,11 @@ function do_delete(account_number)
                 <tr class="active">
                     <th>订单号</th>
                     <th>资费</th>
-                    <th>订单费用</th>
-                    <th>实缴费用</th>
-                    <th>订单状态</th>
-                    <th>订单时间</th>
-                    <th>订单描述</th>
+                    <th>应缴</th>
+                    <th>实缴</th>
+                    <th>状态</th>
+                    <th>时间</th>
+                    <th width=25%>描述</th>
                 </tr>
             </thead>
             <tbody>
@@ -265,6 +265,38 @@ function do_delete(account_number)
             % endfor
             </tbody>
         </table>
+
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th colspan="5"> 账号变更纪录</th>
+                </tr>
+                <tr class="active">
+                    <th>用户账号</th>
+                    <th>变更前资费</th>
+                    <th>变更后资费</th>
+                    <th>变更前过期</th>
+                    <th>变更后过期</th>
+                    <th>最后变更</th>
+                    <th>变更类型</th>
+                    <th>操作员</th>
+                </tr>
+            </thead>
+            <tbody>
+            % for hist in historys:
+            <tr>
+                <td>${hist.account_number}</td>
+                <td>${get_product_name(hist.product_id)}</td>
+                <td>${get_product_name(hist.new_product_id)}</td>
+                <td>${hist.expire_date}</td>
+                <td>${hist.new_expire_date}</td>
+                <td>${hist.operate_time}</td>
+                <td>${type_map[hist.accept_type]}</td>
+                <td>${hist.operator_name}</td>
+            </tr>
+            % endfor
+            </tbody>
+        </table>        
 
     </div>
 </div>
