@@ -1,27 +1,19 @@
 #!/usr/bin/env python
 #coding:utf-8
 from __future__ import unicode_literals
-import sys,os
-from bottle import Bottle
-from bottle import request
-from bottle import response
-from bottle import redirect
-from bottle import MakoTemplate
-from bottle import static_file
-from bottle import abort
-from beaker.cache import cache_managers
-from toughradius.console.libs.paginator import Paginator
-from toughradius.console.libs import utils
-from toughradius.console.websock import websock
-from toughradius.console import models
-from toughradius.console.base import *
-from toughradius.console.admin import forms
+import os
 from hashlib import md5
+import functools
+
+from bottle import Bottle
+from beaker.cache import cache_managers
 from twisted.python import log
 import bottle
-import datetime
-import json
-import functools
+
+from toughradius.console.websock import websock
+from toughradius.console.base import *
+from toughradius.console.admin import forms
+from toughradius.console.libs import utils
 
 app = Bottle()
 render = functools.partial(Render.render_app,app)
@@ -341,7 +333,7 @@ def node_add_post(db):
     db.commit()
     redirect("/node")
     
-permit.add_route("/node/add",u"新增区域",u"系统管理",order=1.01,is_open=False)
+permit.add_route("/node/add",u"新增区域",u"系统管理",order=1.01,is_open=True)
 
 @app.get('/node/update',apply=auth_opr)
 def node_update(db):  
@@ -369,7 +361,7 @@ def node_add_update(db):
     db.commit()
     redirect("/node")    
     
-permit.add_route("/node/update",u"修改区域",u"系统管理",order=1.02,is_open=False)
+permit.add_route("/node/update",u"修改区域",u"系统管理",order=1.02,is_open=True)
 
 @app.get('/node/delete',apply=auth_opr)
 def node_delete(db):     
@@ -388,7 +380,7 @@ def node_delete(db):
     db.commit() 
     redirect("/node")  
     
-permit.add_route("/node/delete",u"删除区域",u"系统管理",order=1.03,is_open=False)
+permit.add_route("/node/delete",u"删除区域",u"系统管理",order=1.03,is_open=True)
 
 ###############################################################################
 # bas manage    
@@ -432,7 +424,7 @@ def bas_add_post(db):
     db.commit()
     redirect("/bas")
     
-permit.add_route("/bas/add",u"新增BAS",u"系统管理",order=2.01,is_open=False)
+permit.add_route("/bas/add",u"新增BAS",u"系统管理",order=2.01,is_open=True)
 
 @app.get('/bas/update',apply=auth_opr)
 def bas_update(db):  
@@ -464,7 +456,7 @@ def bas_add_update(db):
     websock.update_cache("bas",ip_addr=bas.ip_addr)
     redirect("/bas")    
     
-permit.add_route("/bas/update",u"修改BAS",u"系统管理",order=2.02,is_open=False)
+permit.add_route("/bas/update",u"修改BAS",u"系统管理",order=2.02,is_open=True)
 
 @app.get('/bas/delete',apply=auth_opr)
 def bas_delete(db):     
@@ -481,7 +473,7 @@ def bas_delete(db):
     db.commit() 
     redirect("/bas")    
 
-permit.add_route("/bas/delete",u"删除BAS",u"系统管理",order=2.03,is_open=False)
+permit.add_route("/bas/delete",u"删除BAS",u"系统管理",order=2.03,is_open=True)
 
 
 ###############################################################################
@@ -495,7 +487,7 @@ def opr(db):
         oprstatus = forms.opr_status_dict,
         opr_list = db.query(models.SlcOperator))
         
-permit.add_route("/opr",u"操作员管理",u"系统管理",is_menu=True,order=3,is_open=False)
+permit.add_route("/opr",u"操作员管理",u"系统管理",is_menu=True,order=3,is_open=True)
     
 @app.get('/opr/add',apply=auth_opr)
 def opr_add(db):  
@@ -546,7 +538,7 @@ def opr_add_post(db):
     db.commit()
     redirect("/opr")
     
-permit.add_route("/opr/add",u"新增操作员",u"系统管理",order=3.01,is_open=False)
+permit.add_route("/opr/add",u"新增操作员",u"系统管理",order=3.01,is_open=True)
 
 @app.get('/opr/update',apply=auth_opr)
 def opr_update(db):  
@@ -611,7 +603,7 @@ def opr_add_update(db):
     db.commit()
     redirect("/opr")    
     
-permit.add_route("/opr/update",u"修改操作员",u"系统管理",order=3.02,is_open=False)
+permit.add_route("/opr/update",u"修改操作员",u"系统管理",order=3.02,is_open=True)
 
 @app.get('/opr/delete',apply=auth_opr)
 def opr_delete(db):     
@@ -631,7 +623,7 @@ def opr_delete(db):
     db.commit() 
     redirect("/opr")    
 
-permit.add_route("/opr/delete",u"删除操作员",u"系统管理",order=3.03,is_open=False)
+permit.add_route("/opr/delete",u"删除操作员",u"系统管理",order=3.03,is_open=True)
 
 
 

@@ -57,4 +57,4 @@ def restoredb(config,restorefs):
                     traceback.print_exc()
         db.close()
 
-    
+
