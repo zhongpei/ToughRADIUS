@@ -5,9 +5,7 @@ from bottle import Bottle
 from bottle import request
 from bottle import response
 from bottle import redirect
-from bottle import static_file
 from tablib import Dataset
-from toughradius.console.websock import websock
 from toughradius.console import models
 from toughradius.console.libs import utils
 from toughradius.console.admin import forms
