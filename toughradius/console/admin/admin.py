@@ -92,7 +92,12 @@ permit.add_route("/logquery/customer",u"自助系统日志查看",u"系统管理
 
 @app.route('/backup',apply=auth_opr)
 def backup(db): 
-    backup_path = app.config.get('database.backup_path','/var/toughradius/data')   
+    backup_path = app.config.get('database.backup_path','/var/toughradius/data')
+    try:
+        if not os.path.exists(backup_path):
+            os.makedirs(backup_path)
+    except:
+        pass
     flist = os.listdir(backup_path)
     flist.sort(reverse=True)
     return render("sys_backup_db",backups=flist[:30],backup_path=backup_path)
