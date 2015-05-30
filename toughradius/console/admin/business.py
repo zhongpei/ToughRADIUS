@@ -175,6 +175,7 @@ def member_detail(db):
         models.SlcMember.realname,
         models.SlcRadAccount.member_id,
         models.SlcRadAccount.account_number,
+        models.SlcRadAccount.password,
         models.SlcRadAccount.expire_date,
         models.SlcRadAccount.balance,
         models.SlcRadAccount.time_length,

@@ -150,6 +150,7 @@ class AdminServer(object):
             kb2mb=utils.kb2mb,
             mb2kb=utils.mb2kb,
             sec2hour=utils.sec2hour,
+            decrypt=utils.decrypt,
             fmt_online_time=utils.fmt_online_time,
             request=request,
             sys_param_value=self._sys_param_value,

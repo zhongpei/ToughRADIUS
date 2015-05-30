@@ -28,6 +28,7 @@ param_form = pyforms.Form(
     pyforms.Textbox("radiusd_address", description=u"Radius服务IP地址",**input_style),
     pyforms.Textbox("radiusd_admin_port",rules.is_number, description=u"Radius服务管理端口",**input_style),
     pyforms.Textbox("radiusd_bypass", description=u"Radius认证模式(0:免认证|1:认证)",**input_style),
+    pyforms.Textbox("allow_show_pwd", description=u"允许查询用户密码(0:不允许|1:允许)", **input_style),
     pyforms.Textbox("acct_interim_intelval",rules.is_number, description=u"Radius记账间隔(秒)",**input_style),
     # pyforms.Textbox("max_session_timeout",rules.is_number, description=u"Radius最大会话时长(秒)", **input_style),
     pyforms.Textbox("reject_delay",rules.is_number, description=u"拒绝延迟时间(秒)(0-9)",**input_style),
